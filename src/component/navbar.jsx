@@ -2,7 +2,6 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 //para los iconos
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +10,10 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 //vistas
 import Home from '../view/home';
 import Acerca from '../view/acercaDe';
+import RegistroLogin from '../view/registroLogin';
+import InicioLogin from '../view/login';
+//componentes
+import Overlays from '../component/Overlays';
 
 
 function CollapsibleExample() {
@@ -27,17 +30,20 @@ function CollapsibleExample() {
                                 <Nav.Item><Link to='/acerca' className='nav-link'>Acerca</Link></Nav.Item>
                             </Nav>
                             <Nav>
-                                <Nav.Link href="#deets">More deets</Nav.Link>
-                                <Nav.Link eventKey={2} href="#memes">
-                                    <FontAwesomeIcon icon={faUser} />
-                                </Nav.Link>
+                                <Nav.Link href="#deets" >Contacto</Nav.Link>
+                                <Nav.Item>
+                                    <Overlays icono={<FontAwesomeIcon icon={faUser}/>} />
+                                </Nav.Item>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
+                {/*rutas*/} 
                 <Routes>
-                    <Route path='/' element={<Home />}/>
-                    <Route path='/acerca' element={<Acerca />}/>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/acerca' element={<Acerca />} />
+                    <Route path='/inicioLogin' element={<InicioLogin />} />
+                    <Route path='/registroLogin' element={<RegistroLogin />} />
                 </Routes>
             </BrowserRouter>
         </>
