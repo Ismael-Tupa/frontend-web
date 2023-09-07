@@ -1,9 +1,11 @@
 import Headers from './component/navbar';
-//import login from "./view/login";
+import Footers from './component/footer';
+
 function App(){
   return(
     <>
       <Headers />
+      <Footers />
     </>
   )
 }
